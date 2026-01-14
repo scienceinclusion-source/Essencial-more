@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Essencial More | Maison & Boutique</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              gold: {
+                50: '#FFFEFA', // Quase branco, brilho solar
+                100: '#FFF9E5', // Creme dourado muito pálido
+                200: '#FDEebb', // Dourado pastel
+                300: '#EBCB8B', // Dourado suave (para ícones)
+                400: '#D4AF37', // Dourado Clássico (para destaque)
+                500: '#B8860B', // Dark Goldenrod
+                600: '#996515',
+              },
+              caramel: {
+                50: '#FFFCF9',  // Fundo principal: Creme Rosado Claríssimo
+                100: '#F9F2EB', // Fundo secundário: Bege Areia Suave
+                200: '#EDE0D4', // Bordas sutis
+                300: '#DBC1AC', // Texto placeholder
+                400: '#C2A690', // Texto secundário (Taupe)
+                500: '#A68A75', // Ícones neutros
+                600: '#8D7462',
+                700: '#735D4F',
+                800: '#5E4B41', // Texto Principal (Marrom Café Suave, não preto)
+                900: '#45352E',
+              }
+            },
+            fontFamily: {
+              serif: ['"Playfair Display"', 'serif'],
+              sans: ['"Lato"', 'sans-serif'],
+            },
+            backgroundImage: {
+              'gold-gradient': 'linear-gradient(135deg, #FFFAF0 0%, #FFF9E5 100%)',
+              'cross-pattern': "url('data:image/svg+xml,%3Csvg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cg fill=\"%23D4AF37\" fill-opacity=\"0.05\" fill-rule=\"evenodd\"%3E%3Cpath d=\"M10 0v20M0 10h20\" stroke-width=\"0.5\"/%3E%3C/g%3E%3C/svg%3E')",
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.6s ease-out forwards',
+              'slide-up': 'slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUp: {
+                '0%': { transform: 'translateY(20px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Lato', sans-serif;
+        background-color: #FFFCF9; /* Caramel 50 atualizado */
+        color: #5E4B41; /* Caramel 800 atualizado */
+      }
+      
+      .font-serif {
+        font-family: 'Playfair Display', serif;
+      }
+
+      /* Cards mais leves e etéreos */
+      .glass-card {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(237, 224, 212, 0.6); /* Caramel 200 opacity */
+        box-shadow: 0 10px 40px -10px rgba(166, 138, 117, 0.08); /* Sombra marrom suave */
+      }
+
+      .maison-input {
+        background: #FFFCF9;
+        border: 1px solid #EDE0D4; /* Caramel 200 */
+        transition: all 0.3s ease;
+        color: #5E4B41;
+      }
+      .maison-input:focus {
+        border-color: #D4AF37;
+        background: #FFFFFF;
+        box-shadow: 0 4px 12px rgba(212, 175, 55, 0.1);
+        outline: none;
+      }
+      
+      /* Botões e elementos interativos mais suaves */
+      button:active {
+        transform: scale(0.98);
+      }
+
+      /* Custom Scrollbar muito sutil */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #EDE0D4;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #C2A690;
+      }
+
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "@google/genai": "https://esm.sh/@google/genai@^1.35.0",
+    "recharts": "https://esm.sh/recharts@^3.6.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-caramel-50 bg-cross-pattern min-h-screen selection:bg-gold-100 selection:text-caramel-900">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
